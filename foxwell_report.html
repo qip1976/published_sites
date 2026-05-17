@@ -149,6 +149,53 @@
   /* ── PROGRESS BAR ── */
   .progress-bar { background: var(--border); border-radius: 4px; height: 8px; overflow: hidden; margin-top: 6px; }
   .progress-fill { height: 100%; border-radius: 4px; }
+
+  /* ── COMPARISON SECTION ── */
+  .cmp-alert { background: #fdf0ef; border-top: 3px solid var(--red); border-bottom: 1px solid #f5b7b1; padding: 12px 20px; text-align: center; font-size: 13px; color: var(--red); font-weight: 600; }
+  .cmp-header { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+  .cmp-card { background: var(--card-bg); border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.07); border-top: 4px solid; }
+  .cmp-card.tieneng { border-top-color: var(--green); }
+  .cmp-card.foxwell  { border-top-color: var(--accent); }
+  .cmp-name { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+  .cmp-code { font-size: 12px; color: var(--text-muted); margin-bottom: 14px; }
+  .cmp-kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .cmp-kpi { background: var(--light-bg); border-radius: 8px; padding: 10px 12px; }
+  .cmp-kpi-label { font-size: 10px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: .4px; margin-bottom: 3px; }
+  .cmp-kpi-val { font-size: 20px; font-weight: 800; }
+  .cmp-kpi-note { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+  .val-g { color: var(--green); }
+  .val-r { color: var(--red); }
+  .val-o { color: var(--orange); }
+  .val-b { color: var(--accent); }
+  .val-n { color: var(--navy); }
+  .cmp-table th.th-t { color: var(--green); }
+  .cmp-table th.th-f { color: var(--accent); }
+  .cmp-table { width: 100%; border-collapse: collapse; background: var(--card-bg); font-size: 13px; box-shadow: 0 2px 8px rgba(0,0,0,.07); border-radius: 10px; overflow: hidden; }
+  .cmp-table thead tr { background: var(--navy); color: #fff; }
+  .cmp-table thead th { padding: 11px 16px; text-align: left; font-weight: 600; font-size: 12px; }
+  .cmp-table tbody tr { border-bottom: 1px solid var(--border); }
+  .cmp-table tbody tr:hover { background: #f0f4ff; }
+  .cmp-table tbody td { padding: 11px 16px; vertical-align: top; }
+  .cmp-table .td-metric { font-weight: 700; color: var(--navy); width: 18%; }
+  .cmp-table .td-note { font-size: 11px; color: var(--text-muted); width: 20%; }
+  .win-tag { background: #eafaf1; color: var(--green); font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: 700; border: 1px solid #abebc6; margin-left: 4px; }
+  .parent-row { display: flex; gap: 16px; margin-bottom: 20px; }
+  .parent-box { flex: 1; border-radius: 12px; padding: 20px; }
+  .parent-box.good { background: #edfaf1; border: 1px solid #abebc6; }
+  .parent-box.bad  { background: var(--risk-red); border: 1px solid #f5b7b1; }
+  .parent-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+  .parent-stat { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(0,0,0,.06); padding: 6px 0; font-size: 12px; color: var(--text-muted); }
+  .parent-stat:last-child { border: 0; }
+  .parent-stat strong { color: var(--text); }
+  .verdict-dark { background: var(--navy); border-radius: 14px; padding: 28px; color: #fff; margin-top: 20px; }
+  .verdict-dark-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 12px; }
+  .verdict-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .verdict-col { border-radius: 10px; padding: 16px; }
+  .verdict-col.good { background: rgba(30,132,73,.2); border: 1px solid rgba(30,132,73,.4); }
+  .verdict-col.caution { background: rgba(230,126,34,.15); border: 1px solid rgba(230,126,34,.35); }
+  .verdict-col-title { font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+  .verdict-col li { font-size: 12px; color: #b0bec5; line-height: 2; padding-left: 14px; position: relative; list-style: none; }
+  .verdict-col li::before { content: '›'; position: absolute; left: 0; color: #ffd54f; }
 </style>
 </head>
 <body>
@@ -163,6 +210,7 @@
     <li><a href="#shengri">盛日儲能</a></li>
     <li><a href="#ratios">財務比率</a></li>
     <li><a href="#greenpower">綠電業務</a></li>
+    <li><a href="#comparison">競品比較</a></li>
     <li><a href="#summary">總結</a></li>
   </ul>
 </nav>
@@ -958,6 +1006,180 @@
 </div>
 </section>
 
+<!-- ══ SECTION 7：競品比較 ══ -->
+<section id="comparison" style="background:#fff;">
+<div class="cmp-alert">
+  ⚠ 重大風險警示：富威電力母公司 <strong>森崴能源（6806）確定 2026/6/23 終止上市</strong>——淨值轉負、銀行抽銀根 35.6 億、債信降至 D 級。本節已全面納入此變數。
+</div>
+<div class="section-wrap" style="padding-top:28px;">
+  <h2 class="section-title">🆚 競品比較：天能綠電 7842 vs 富威電力 6994</h2>
+  <p style="font-size:13px;color:var(--text-muted);margin-bottom:22px;">同樣賣綠電，商業模式截然不同。天能綠電為純售電交易平台，富威電力為太陽能資產＋儲能工程＋售電混合型。以下從六大維度深度比較。</p>
+
+  <!-- ── 公司評分卡 ── -->
+  <div class="cmp-header">
+    <div class="cmp-card tieneng">
+      <div class="cmp-name">天能綠電</div>
+      <div class="cmp-code">7842 ｜ 上櫃 2026/05 ｜ 台灣民營售電龍頭</div>
+      <div class="cmp-kpi-grid">
+        <div class="cmp-kpi"><div class="cmp-kpi-label">2025 年營收</div><div class="cmp-kpi-val val-g">22.85億</div><div class="cmp-kpi-note">+123% YoY</div></div>
+        <div class="cmp-kpi"><div class="cmp-kpi-label">2025 毛利率</div><div class="cmp-kpi-val val-o">5.23%</div><div class="cmp-kpi-note">純交易薄利</div></div>
+        <div class="cmp-kpi"><div class="cmp-kpi-label">2025 EPS</div><div class="cmp-kpi-val val-g">4.01元</div><div class="cmp-kpi-note">淨利 5,969萬</div></div>
+        <div class="cmp-kpi"><div class="cmp-kpi-label">員工人數</div><div class="cmp-kpi-val val-n">24人</div><div class="cmp-kpi-note">極致輕資產</div></div>
+      </div>
+    </div>
+    <div class="cmp-card foxwell">
+      <div class="cmp-name">富威電力</div>
+      <div class="cmp-code">6994 ｜ 太陽能＋儲能工程＋售電混合型</div>
+      <div class="cmp-kpi-grid">
+        <div class="cmp-kpi"><div class="cmp-kpi-label">2025 年營收</div><div class="cmp-kpi-val val-n">49.90億</div><div class="cmp-kpi-note">65% 為工程收入</div></div>
+        <div class="cmp-kpi"><div class="cmp-kpi-label">電費毛利率（估）</div><div class="cmp-kpi-val val-g">~35%</div><div class="cmp-kpi-note">混合毛利 21%</div></div>
+        <div class="cmp-kpi"><div class="cmp-kpi-label">2025 EPS</div><div class="cmp-kpi-val val-n">6.34元</div><div class="cmp-kpi-note">Q1 2026 僅 0.48元</div></div>
+        <div class="cmp-kpi"><div class="cmp-kpi-label">可動用現金</div><div class="cmp-kpi-val val-r">1.16億</div><div class="cmp-kpi-note">季燒 2.72億 ⚠</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 六維燈號比較表 ── -->
+  <h3 class="sub-title" style="margin-bottom:12px;">六大維度燈號評比</h3>
+  <table class="cmp-table" style="margin-bottom:24px;">
+    <thead>
+      <tr>
+        <th style="width:18%">評估維度</th>
+        <th class="th-t" style="width:31%">🟢 天能綠電 7842</th>
+        <th class="th-f" style="width:31%">富威電力 6994</th>
+        <th style="width:20%">分析說明</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-metric">💡 純綠電獲利能力</td>
+        <td>🟡 毛利率 5.23%<br><small style="color:var(--text-muted)">薄利多銷，淨利率 2.6%</small></td>
+        <td>🟢 電費毛利率 ~35%（估）<br><small style="color:var(--text-muted)">太陽能固定資產，FIT 收購保障</small></td>
+        <td class="td-note">天能量大但薄；富威質優但量混</td>
+      </tr>
+      <tr>
+        <td class="td-metric">🏗 輕資產程度</td>
+        <td>🟢 24 人・近零固定資產<span class="win-tag">勝</span><br><small style="color:var(--text-muted)">純交易平台，每人均產值 0.95億</small></td>
+        <td>🔴 太陽能電廠＋儲能設備<br><small style="color:var(--text-muted)">年化折舊 ~2億，資本密集</small></td>
+        <td class="td-note">天能完勝：資本效率差距巨大</td>
+      </tr>
+      <tr>
+        <td class="td-metric">💸 現金流健康度</td>
+        <td>🟢 正現金流，無資金缺口<span class="win-tag">勝</span><br><small style="color:var(--text-muted)">先收電費再付，現金週轉正向</small></td>
+        <td>🔴 季燒 2.72億，現金 1.16億<br><small style="color:var(--text-muted)">盛日 5.72億零回收，危機等級</small></td>
+        <td class="td-note">富威最急迫風險點</td>
+      </tr>
+      <tr>
+        <td class="td-metric">🏢 母公司支撐</td>
+        <td>🟢 雲豹能源（6869）<span class="win-tag">勝</span><br><small style="color:var(--text-muted)">2025 營收 74.69億，配息 2元/股</small></td>
+        <td>🔴 森崴能源（6806）<br><small style="color:var(--text-muted)">淨值轉負，6/23 確定下市，D 級評等</small></td>
+        <td class="td-note">最決定性差異，一個天堂一個地獄</td>
+      </tr>
+      <tr>
+        <td class="td-metric">📋 在手合約品質</td>
+        <td>🟢 341億度・90% 十年以上長約<span class="win-tag">勝</span><br><small style="color:var(--text-muted)">日月光、美光、Gogoro 等大廠</small></td>
+        <td>🟡 電費合約穩定（FIT 20-25年）<br><small style="color:var(--text-muted)">但盛日 5.72億應收帳款至今零回收</small></td>
+        <td class="td-note">天能合約久且客戶品質高</td>
+      </tr>
+      <tr>
+        <td class="td-metric">🚀 市占與成長</td>
+        <td>🟢 民營售電市占 ~20%，#1<span class="win-tag">勝</span><br><small style="color:var(--text-muted)">CAGR 68%（2024-2027E），逾60家企業客戶</small></td>
+        <td>🟡 電費 +38.8% YoY，但工程停滯<br><small style="color:var(--text-muted)">盛日停工後電費為唯一成長動能</small></td>
+        <td class="td-note">天能是綠電交易成長純標的</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ── 圖表區 ── -->
+  <div class="chart-grid-2" style="margin-bottom:20px;">
+    <div class="chart-box">
+      <h3 class="sub-title">年度營收比較（億元）</h3>
+      <canvas id="cmpRevenueChart" height="220"></canvas>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:8px;">* 富威 2026E = Q1×4；天能 2026E = 市場預估約 40億。</div>
+    </div>
+    <div class="chart-box">
+      <h3 class="sub-title">毛利率趨勢比較（%）</h3>
+      <canvas id="cmpMarginChart" height="220"></canvas>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:8px;">富威電費毛利率為估算值（未實現銷貨利益反推法）。</div>
+    </div>
+  </div>
+  <div class="chart-grid-2" style="margin-bottom:20px;">
+    <div class="chart-box">
+      <h3 class="sub-title">六維綜合評分雷達</h3>
+      <canvas id="cmpRadarChart" height="240"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3 class="sub-title">天能綠電電費交易量成長（億度）</h3>
+      <canvas id="cmpVolumeChart" height="240"></canvas>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:8px;">2026-2027 為公司預估值。</div>
+    </div>
+  </div>
+
+  <!-- ── 母公司風險對比 ── -->
+  <h3 class="sub-title" style="margin-top:4px;margin-bottom:12px;">母公司財務狀況對比——最關鍵差異</h3>
+  <div class="parent-row">
+    <div class="parent-box good">
+      <div class="parent-title" style="color:var(--green)">🟢 雲豹能源（6869）——天能綠電之母</div>
+      <div class="parent-stat"><span>2025 合併營收</span><strong>74.69 億元（+96.9% YoY）</strong></div>
+      <div class="parent-stat"><span>2025 每股股利</span><strong style="color:var(--green)">2.0 元（配息率 80%+）</strong></div>
+      <div class="parent-stat"><span>業務分布</span><strong>儲能工程 39%｜售電 32%｜維運 29%</strong></div>
+      <div class="parent-stat"><span>天能持股比例</span><strong>80.06%</strong></div>
+      <div class="parent-stat"><span>財務狀況</span><strong style="color:var(--green)">正淨值・獲利中・積極配息</strong></div>
+      <div class="parent-stat"><span>支撐能力</span><strong>可為天能提供融資背書與資源整合</strong></div>
+    </div>
+    <div class="parent-box bad">
+      <div class="parent-title" style="color:var(--red)">🔴 森崴能源（6806）——富威電力之母——即將下市</div>
+      <div class="parent-stat"><span>2025 稅後虧損</span><strong style="color:var(--red)">158.65 億元（EPS -57.77）</strong></div>
+      <div class="parent-stat"><span>Q1 2026 淨損</span><strong style="color:var(--red)">18.49 億元（EPS -6.82）</strong></div>
+      <div class="parent-stat"><span>Q1 2026 淨值</span><strong style="color:var(--red)">負 1.82 億元（資不抵債）</strong></div>
+      <div class="parent-stat"><span>銀行抽銀根</span><strong style="color:var(--red)">35.6 億元授信被收回</strong></div>
+      <div class="parent-stat"><span>債信評等</span><strong style="color:var(--red)">D 級（違約等級）</strong></div>
+      <div class="parent-stat"><span>終止上市日</span><strong style="color:var(--red)">2026 年 6 月 23 日（已確定）</strong></div>
+      <div class="parent-stat"><span>虧損根源</span><strong>子公司富崴能源台電離岸風電二期合約損失</strong></div>
+    </div>
+  </div>
+
+  <div class="infobox danger" style="margin-top:0;margin-bottom:20px;">
+    <strong>森崴下市對富威電力的連鎖影響</strong>
+    新私募投資人料將完全掌握董事會，可能處分富威電力股票變現清償債務；森崴對富威的背書若撤銷將增加融資難度。<b>唯一正面：富威被認定為森崴「最有價值資產」，若引進新股東可能帶來重組動能。</b>
+  </div>
+
+  <!-- ── 裁決 ── -->
+  <div class="verdict-dark">
+    <div class="verdict-dark-title">⚡ 最終裁決：同樣賣綠電，誰更值得持有？</div>
+    <div style="font-size:13px;color:#90a4ae;line-height:2;">
+      天能綠電在<b style="color:#fff;">母公司健康、輕資產、現金流、在手合約、市占率</b>五個維度完勝；富威電力僅在<b style="color:#fff;">電費毛利率質量（~35%）</b>上領先，但被<b style="color:#f1948a;">母公司下市＋現金危機＋75.2億短期借款</b>三重風險完全遮蔽。
+    </div>
+    <div class="verdict-cols">
+      <div class="verdict-col good">
+        <div class="verdict-col-title" style="color:#a5d6a7;">🟢 天能綠電——適合持有</div>
+        <ul>
+          <li>民營售電龍頭，市占 20%，成長能見度高</li>
+          <li>341 億度在手合約（90% 十年以上），收入有保障</li>
+          <li>24 人輕資產模式，每人均產值 0.95 億</li>
+          <li>母公司雲豹健康，年配息 2 元，積極支撐</li>
+          <li>主要風險：毛利薄（5%），競爭加劇可能壓縮</li>
+        </ul>
+      </div>
+      <div class="verdict-col caution">
+        <div class="verdict-col-title" style="color:#fad7a0;">🟡 富威電力——高風險觀望</div>
+        <ul>
+          <li>太陽能電費資產品質佳，長期仍具潛力</li>
+          <li>純電費 DSCR 估算 2.3x，基本業務可自給</li>
+          <li>但母公司下市 + 現金危機 + 盛日應收零回收</li>
+          <li>75.2 億短期借款展延是近期最大生死關卡</li>
+          <li>適合：危機解除後的逆向布局，非現在持有</li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.12);margin-top:18px;padding-top:14px;font-size:12px;color:#78909c;line-height:1.9;">
+      資料來源：天能綠電財報數據（2025年合併財報、業績發表會）｜雲豹能源 2025 年報｜森崴能源 Q1 2026 財報及交易所公告｜富威電力財報分析詳見本報告各節。本節比較資料截止 2026 年 5 月 17 日，不構成投資建議。
+    </div>
+  </div>
+
+</div>
+</section>
+
 <footer>
   <div>本報告資料來源：富威電力（6994）2025年度合併財報（資誠查核）及2026年Q1合併財報（資誠核閱，含保留結論）</div>
   <div style="margin-top:4px;">分析截止日：2026年5月15日 ｜ 數據單位：新台幣 ｜ 本報告僅供參考，不構成投資建議</div>
@@ -1622,6 +1844,168 @@ function toggleScenario(which, btn) {
           grid: { color: 'rgba(0,0,0,.05)' },
           ticks: { callback: v => (v / 100000).toFixed(1) + '億' }
         }
+      }
+    }
+  });
+})();
+
+// ══════════════════════════════════════════════════════
+// COMPARISON SECTION — 4 charts
+// ══════════════════════════════════════════════════════
+
+// CMP-1. 年度營收比較
+(function() {
+  const ctx = document.getElementById('cmpRevenueChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['2023', '2024', '2025', '2026E'],
+      datasets: [
+        {
+          label: '天能綠電（售電）',
+          data: [2.24, 10.24, 22.85, 40],
+          backgroundColor: 'rgba(30,132,73,.75)',
+          borderRadius: 5, borderWidth: 0
+        },
+        {
+          label: '富威電力（電費）',
+          data: [null, 10.16, 13.06, 15.41],
+          backgroundColor: 'rgba(45,125,210,.6)',
+          borderRadius: 5, borderWidth: 0
+        },
+        {
+          label: '富威電力（合計）',
+          data: [null, 18.86, 49.90, 33.66],
+          backgroundColor: 'rgba(45,125,210,.2)',
+          borderRadius: 5,
+          borderColor: 'rgba(45,125,210,.5)',
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { labels: { font: { size: 11 }, padding: 12 } },
+        tooltip: {
+          mode: 'index', intersect: false,
+          callbacks: { label: c => c.parsed.y !== null ? ` ${c.dataset.label}: ${c.parsed.y.toFixed(2)}億` : null }
+        }
+      },
+      scales: {
+        x: { grid: { color: 'rgba(0,0,0,.05)' } },
+        y: { grid: { color: 'rgba(0,0,0,.05)' }, ticks: { callback: v => v + '億' } }
+      }
+    }
+  });
+})();
+
+// CMP-2. 毛利率趨勢
+(function() {
+  const ctx = document.getElementById('cmpMarginChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['2023', '2024', '2025', 'Q1 2026'],
+      datasets: [
+        {
+          label: '天能綠電毛利率',
+          data: [7.35, 5.0, 5.23, null],
+          borderColor: C.green, backgroundColor: 'rgba(30,132,73,.1)',
+          borderWidth: 2.5, pointRadius: 6, fill: true, tension: 0.3, spanGaps: false,
+          pointBackgroundColor: C.green
+        },
+        {
+          label: '富威電費毛利率（估算）',
+          data: [null, null, 36.5, 35.0],
+          borderColor: C.blue, backgroundColor: 'transparent',
+          borderWidth: 2, pointRadius: 6, fill: false, tension: 0.3, spanGaps: false,
+          borderDash: [6, 3], pointBackgroundColor: C.blue
+        },
+        {
+          label: '富威混合毛利率（實際）',
+          data: [null, null, 21.0, 19.2],
+          borderColor: '#93c5fd', backgroundColor: 'transparent',
+          borderWidth: 1.5, pointRadius: 4, fill: false, tension: 0.3, spanGaps: false,
+          borderDash: [3, 3], pointBackgroundColor: '#93c5fd'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { labels: { font: { size: 11 }, padding: 12 } },
+        tooltip: { callbacks: { label: c => c.parsed.y !== null ? ` ${c.dataset.label}: ${c.parsed.y.toFixed(1)}%` : null } }
+      },
+      scales: {
+        x: { grid: { color: 'rgba(0,0,0,.05)' } },
+        y: { min: 0, max: 45, grid: { color: 'rgba(0,0,0,.05)' }, ticks: { callback: v => v + '%' } }
+      }
+    }
+  });
+})();
+
+// CMP-3. 六維評分雷達
+(function() {
+  const ctx = document.getElementById('cmpRadarChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['現金健康度', '母公司支撐', '純售電獲利', '成長動能', '在手合約', '輕資產程度'],
+      datasets: [
+        {
+          label: '天能綠電 7842',
+          data: [5, 5, 3, 5, 5, 5],
+          borderColor: C.green, backgroundColor: 'rgba(30,132,73,.15)',
+          borderWidth: 2.5, pointRadius: 5, pointBackgroundColor: C.green
+        },
+        {
+          label: '富威電力 6994',
+          data: [1, 1, 4, 3, 3, 2],
+          borderColor: C.blue, backgroundColor: 'rgba(45,125,210,.1)',
+          borderWidth: 2, pointRadius: 4, pointBackgroundColor: C.blue,
+          borderDash: [4, 2]
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { font: { size: 11 }, padding: 14 } } },
+      scales: {
+        r: {
+          min: 0, max: 5, ticks: { stepSize: 1, backdropColor: 'transparent', font: { size: 9 } },
+          grid: { color: 'rgba(0,0,0,.1)' }, angleLines: { color: 'rgba(0,0,0,.1)' },
+          pointLabels: { font: { size: 11 } }
+        }
+      }
+    }
+  });
+})();
+
+// CMP-4. 天能交易量成長
+(function() {
+  const ctx = document.getElementById('cmpVolumeChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['2022', '2023', '2024', '2025', '2026E', '2027E'],
+      datasets: [{
+        label: '天能綠電轉供量（億度）',
+        data: [0.1, 0.3, 1.87, 4.2, 6.6, 8.8],
+        backgroundColor: ctx2 => ctx2.dataIndex >= 4 ? 'rgba(30,132,73,.35)' : 'rgba(30,132,73,.75)',
+        borderRadius: 5, borderWidth: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { font: { size: 11 } } }, tooltip: { callbacks: { label: c => ` ${c.parsed.y}億度` } } },
+      scales: {
+        x: { grid: { color: 'rgba(0,0,0,.05)' } },
+        y: { grid: { color: 'rgba(0,0,0,.05)' }, ticks: { callback: v => v + '億度' } }
       }
     }
   });
