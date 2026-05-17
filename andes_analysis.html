@@ -257,64 +257,65 @@
   .cb-key { color: var(--text-secondary); }
   .cb-val { font-weight: 600; }
 
-  /* === ARM COMPARE SECTION === */
+  /* === THREE-WAY COMPARE SECTION === */
   .arm-section { margin-bottom: 32px; }
   .arm-section-title {
-    font-size: 20px; font-weight: 800; color: #fff;
-    background: linear-gradient(135deg, #0d1b3e 0%, #2a1060 100%);
-    border: 1px solid #7b1fa2;
-    border-radius: 10px; padding: 14px 20px; margin-bottom: 20px;
-    display: flex; align-items: center; gap: 12px;
+    font-size: 18px; font-weight: 800; color: #fff;
+    background: linear-gradient(135deg, #0d1b3e 0%, #1a3050 100%);
+    border: 1px solid #1e4976; border-radius: 10px;
+    padding: 14px 20px; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   }
   .arm-section-title .vs-badge {
     background: linear-gradient(135deg, #1976d2, #7b1fa2);
-    color: #fff; font-size: 12px; padding: 4px 10px; border-radius: 20px;
+    color: #fff; font-size: 11px; padding: 3px 9px; border-radius: 20px;
   }
-  /* 30-second quick compare */
-  .quick-compare { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 20px; }
+  /* position summary card */
+  .pos-card {
+    background: linear-gradient(135deg, #0d1f3c 0%, #1a2a40 100%);
+    border: 1px solid #7b1fa2; border-radius: 12px;
+    padding: 18px 22px; margin-bottom: 18px;
+  }
+  .pos-card-title { font-size: 14px; font-weight: 700; color: #ce93d8; margin-bottom: 12px; }
+  .pos-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 10px; }
+  .pos-item { text-align: center; }
+  .pos-item .p-label { font-size: 10px; color: #78909c; margin-bottom: 5px; }
+  .pos-item .p-rank { font-size: 22px; font-weight: 900; line-height: 1; }
+  .pos-item .p-company { font-size: 11px; font-weight: 600; margin-top: 3px; }
+  .pos-item .p-note { font-size: 10px; color: #9e9e9e; margin-top: 2px; }
+  /* quick compare */
+  .quick-compare { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 18px; }
   .qc-card {
     background: #0d1f3c; border-radius: 10px; padding: 14px;
     border-top: 3px solid #7b1fa2; position: relative;
   }
   .qc-title { font-size: 11px; color: #9e9e9e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-  .qc-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
-  .qc-company { font-size: 11px; font-weight: 700; }
+  .qc-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
+  .qc-company { font-size: 10px; font-weight: 700; min-width: 50px; }
   .qc-andes { color: #4fc3f7; }
   .qc-arm { color: #ff9800; }
-  .qc-val { font-size: 15px; font-weight: 800; }
-  .qc-light { position: absolute; top: 10px; right: 10px; font-size: 16px; }
-  .qc-verdict {
-    border-top: 1px solid #1e3a5f; padding-top: 8px; margin-top: 8px;
-    font-size: 11px; color: #bdbdbd; line-height: 1.4;
-  }
-  /* Compare cards */
+  .qc-sifive { color: #69f0ae; }
+  .qc-val { font-size: 13px; font-weight: 800; }
+  .qc-light { position: absolute; top: 10px; right: 10px; font-size: 15px; }
+  .qc-verdict { border-top: 1px solid #1e3a5f; padding-top: 8px; margin-top: 8px; font-size: 11px; color: #bdbdbd; line-height: 1.4; }
+  /* compare cards */
   .compare-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .cmp-card {
-    background: var(--bg-secondary); border: 1px solid var(--border);
-    border-radius: 10px; overflow: hidden;
-  }
-  .cmp-header {
-    background: #0d1f3c; padding: 12px 16px;
-    display: flex; justify-content: space-between; align-items: center;
-  }
+  .cmp-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .cmp-header { background: #0d1f3c; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; }
   .cmp-header h3 { font-size: 14px; font-weight: 700; color: #fff; }
   .cmp-tag { font-size: 11px; padding: 3px 8px; border-radius: 10px; font-weight: 600; }
   .tag-risk { background: rgba(244,67,54,0.2); color: #ff5252; }
   .tag-ok { background: rgba(76,175,80,0.2); color: #69f0ae; }
   .tag-warn { background: rgba(255,152,0,0.2); color: #ff9800; }
-  .cmp-insight {
-    background: rgba(79,195,247,0.06); border-bottom: 1px solid var(--border);
-    padding: 8px 16px; font-size: 12px; color: #90caf9; font-style: italic;
-  }
+  .cmp-insight { background: rgba(79,195,247,0.06); border-bottom: 1px solid var(--border); padding: 8px 16px; font-size: 12px; color: #90caf9; font-style: italic; }
   .cmp-body { padding: 14px 16px; }
-  .cmp-verdict {
-    border-top: 1px solid #1e3a5f; padding: 10px 16px; font-size: 12px;
-    color: #bdbdbd; background: #0a1829;
-  }
-  .legend-row { display: flex; gap: 16px; margin-bottom: 10px; font-size: 12px; }
-  .legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 5px; }
+  .cmp-verdict { border-top: 1px solid #1e3a5f; padding: 10px 16px; font-size: 12px; color: #bdbdbd; background: #0a1829; }
+  .legend-row { display: flex; gap: 14px; margin-bottom: 10px; font-size: 12px; flex-wrap: wrap; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 4px; }
   .arm-note { font-size: 11px; color: #546e7a; margin-top: 8px; }
-  @media(max-width:900px) { .quick-compare,.compare-cards { grid-template-columns: 1fr; } }
+  .three-donuts { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  @media(max-width:1000px) { .quick-compare { grid-template-columns: repeat(2,1fr); } }
+  @media(max-width:900px) { .compare-cards,.three-donuts { grid-template-columns: 1fr; } .pos-grid { grid-template-columns: repeat(3,1fr); } }
 </style>
 </head>
 <body>
@@ -357,194 +358,220 @@
     </div>
   </div>
 
-  <!-- ===== ARM COMPARISON SECTION ===== -->
+  <!-- ===== THREE-WAY COMPARISON SECTION ===== -->
   <div class="arm-section">
     <div class="arm-section-title">
-      <span>晶心科技（6533）</span>
+      <span style="color:#4fc3f7;">晶心科技（6533）</span>
       <span class="vs-badge">VS</span>
       <span style="color:#ff9800;">ARM Holdings（NASDAQ: ARM）</span>
-      <span style="font-size:13px; color:#9e9e9e; margin-left:auto;">四大核心指標比較｜30 秒速讀版</span>
+      <span class="vs-badge">VS</span>
+      <span style="color:#69f0ae;">SiFive（Pre-IPO）</span>
+      <span style="font-size:12px; color:#9e9e9e; margin-left:auto;">三大 RISC-V / IP 授權玩家核心指標比較</span>
     </div>
 
-    <!-- 30-second quick summary -->
+    <!-- POSITION SUMMARY CARD -->
+    <div class="pos-card">
+      <div class="pos-card-title">🏆 從四個指標看，晶心科在三家中的競爭位置是？</div>
+      <div class="pos-grid">
+        <div class="pos-item">
+          <div class="p-label">財務健康</div>
+          <div class="p-rank" style="color:#ff9800;">🥇</div>
+          <div class="p-company" style="color:#ff9800;">ARM</div>
+          <div class="p-note">正FCF $882M/年</div>
+        </div>
+        <div class="pos-item">
+          <div class="p-label">財務健康</div>
+          <div class="p-rank" style="color:#ffeb3b;">🥈</div>
+          <div class="p-company" style="color:#69f0ae;">SiFive</div>
+          <div class="p-note">剛融資$400M充裕</div>
+        </div>
+        <div class="pos-item">
+          <div class="p-label">財務健康</div>
+          <div class="p-rank" style="color:#ff5252;">🥉</div>
+          <div class="p-company" style="color:#4fc3f7;">晶心科</div>
+          <div class="p-note">~4季跑道(增資中)</div>
+        </div>
+        <div class="pos-item">
+          <div class="p-label">收入成熟度(Royalty%)</div>
+          <div class="p-rank" style="color:#ff9800;">🥇</div>
+          <div class="p-company" style="color:#ff9800;">ARM 53%</div>
+          <div class="p-note">量產獲利成熟期</div>
+        </div>
+        <div class="pos-item">
+          <div class="p-label">收入成熟度(Royalty%)</div>
+          <div class="p-rank" style="color:#ffeb3b;">🥈</div>
+          <div class="p-company" style="color:#4fc3f7;">晶心科 19-25%</div>
+          <div class="p-note">客戶逐步量產中</div>
+        </div>
+        <div class="pos-item">
+          <div class="p-label">收入成熟度(Royalty%)</div>
+          <div class="p-rank" style="color:#ff5252;">🥉</div>
+          <div class="p-company" style="color:#69f0ae;">SiFive 10%</div>
+          <div class="p-note">生態仍在建立期</div>
+        </div>
+      </div>
+      <div style="margin-top:14px; padding-top:12px; border-top:1px solid #1e3a5f; font-size:12px; color:#bdbdbd; line-height:1.8;">
+        <strong style="color:#ce93d8;">綜合定位：</strong>
+        ARM 是遙遠的標竿（$4.92B 收入、正獲利）；SiFive 是最直接的競爭對手（同為 RISC-V、規模相近、但已獲 NVIDIA 等背書融資 $400M）；
+        晶心科在 <strong style="color:#4fc3f7;">亞洲市場具主場優勢</strong>，Royalty 佔比逐季改善（19%→25%），
+        但現金壓力最大且 R&D 費率最高。若晶心科能在 2-3 年內將 Royalty 佔比提升至 35-40%，財務模型將顯著改善。
+      </div>
+    </div>
+
+    <!-- QUICK COMPARE 4 CARDS -->
     <div class="quick-compare">
-      <!-- Cash Burn -->
       <div class="qc-card">
         <div class="qc-light">🔴</div>
-        <div class="qc-title">① 燒錢速度</div>
-        <div class="qc-row">
-          <span class="qc-company qc-andes">晶心科</span>
-          <span class="qc-val" style="color:#ff5252;">-NT$373M/季</span>
-        </div>
-        <div class="qc-row">
-          <span class="qc-company qc-arm">ARM</span>
-          <span class="qc-val" style="color:#69f0ae;">+$220M/季 FCF</span>
-        </div>
-        <div class="qc-verdict">晶心科每季燒錢，ARM每季大量生錢。晶心科剩約 4 季現金跑道，ARM無跑道問題。</div>
+        <div class="qc-title">① 燒錢速度（FCF/季）</div>
+        <div class="qc-row"><span class="qc-company qc-andes">晶心科</span><span class="qc-val" style="color:#ff5252;">-NT$373M ↑</span></div>
+        <div class="qc-row"><span class="qc-company qc-arm">ARM</span><span class="qc-val" style="color:#69f0ae;">+$220M ↑</span></div>
+        <div class="qc-row"><span class="qc-company qc-sifive">SiFive</span><span class="qc-val" style="color:#ffeb3b;">-$25M（融資後充裕）</span></div>
+        <div class="qc-verdict">壓力：晶心科 &gt; SiFive（融資前）&gt;&gt; ARM。ARM 唯一正FCF，晶心科燒錢最急迫。</div>
       </div>
-      <!-- Intangibles -->
       <div class="qc-card">
         <div class="qc-light">🟡</div>
-        <div class="qc-title">② 無形資產佔比</div>
-        <div class="qc-row">
-          <span class="qc-company qc-andes">晶心科</span>
-          <span class="qc-val" style="color:#4fc3f7;">44.1%</span>
-        </div>
-        <div class="qc-row">
-          <span class="qc-company qc-arm">ARM</span>
-          <span class="qc-val" style="color:#ff9800;">~35%</span>
-        </div>
-        <div class="qc-verdict">晶心科無形資產為自建 RISC-V IP（持續增加）；ARM 為收購取得（商譽+技術）。性質不同。</div>
+        <div class="qc-title">② Royalty vs License</div>
+        <div class="qc-row"><span class="qc-company qc-andes">晶心科</span><span class="qc-val" style="color:#4fc3f7;">License 65% / Roy 19%</span></div>
+        <div class="qc-row"><span class="qc-company qc-arm">ARM</span><span class="qc-val" style="color:#ff9800;">License 47% / Roy 53%</span></div>
+        <div class="qc-row"><span class="qc-company qc-sifive">SiFive</span><span class="qc-val" style="color:#69f0ae;">License 60% / Roy 10%</span></div>
+        <div class="qc-verdict">成熟度：ARM &gt;&gt; 晶心科 &gt; SiFive。SiFive 收入結構最不穩定，晶心科居中且持續改善。</div>
       </div>
-      <!-- OpEx Ratio -->
       <div class="qc-card">
         <div class="qc-light">🔴</div>
-        <div class="qc-title">③ 研發費率（GAAP）</div>
-        <div class="qc-row">
-          <span class="qc-company qc-andes">晶心科 FY25</span>
-          <span class="qc-val" style="color:#ff5252;">86.9%</span>
-        </div>
-        <div class="qc-row">
-          <span class="qc-company qc-arm">ARM FY26</span>
-          <span class="qc-val" style="color:#ff9800;">57% GAAP</span>
-        </div>
-        <div class="qc-verdict">晶心科 R&D 費率比 ARM 高 30 個百分點，Q1'26 更飆至 116.5%。ARM R&D 含大量股酬（non-GAAP 僅約 36%）。</div>
+        <div class="qc-title">③ R&D 費率（GAAP）</div>
+        <div class="qc-row"><span class="qc-company qc-andes">晶心科 Q1'26</span><span class="qc-val" style="color:#ff5252;">116.5% ↑↑</span></div>
+        <div class="qc-row"><span class="qc-company qc-arm">ARM FY26</span><span class="qc-val" style="color:#ff9800;">57% GAAP</span></div>
+        <div class="qc-row"><span class="qc-company qc-sifive">SiFive 2025e</span><span class="qc-val" style="color:#ffeb3b;">~130-150%↓</span></div>
+        <div class="qc-verdict">效率：ARM &gt;&gt; 晶心科 ≈ SiFive。三家都大力投資 R&D，但 ARM 已達規模效益，另兩家仍在燒錢佈局期。</div>
       </div>
-      <!-- Revenue Mix -->
       <div class="qc-card">
         <div class="qc-light">🟡</div>
-        <div class="qc-title">④ Royalty vs License</div>
-        <div class="qc-row">
-          <span class="qc-company qc-andes">晶心科</span>
-          <span class="qc-val" style="color:#4fc3f7;">授權 65% / 權利金 19%</span>
-        </div>
-        <div class="qc-row">
-          <span class="qc-company qc-arm">ARM</span>
-          <span class="qc-val" style="color:#ff9800;">授權 47% / 權利金 53%</span>
-        </div>
-        <div class="qc-verdict">ARM 已進入量產收成期（權利金佔多數）；晶心科仍靠大型一次性授權，穩定性較低。</div>
+        <div class="qc-title">④ 無形資產佔總資產</div>
+        <div class="qc-row"><span class="qc-company qc-andes">晶心科</span><span class="qc-val" style="color:#4fc3f7;">44.1%（自研）↑</span></div>
+        <div class="qc-row"><span class="qc-company qc-arm">ARM</span><span class="qc-val" style="color:#ff9800;">~35%（收購）→</span></div>
+        <div class="qc-row"><span class="qc-company qc-sifive">SiFive</span><span class="qc-val" style="color:#69f0ae;">~5%（現金主導）</span></div>
+        <div class="qc-verdict">護城河深度：ARM≈晶心科 &gt;&gt; SiFive。晶心科靠自建 IP 快速累積，SiFive 多費用化未資本化。</div>
       </div>
     </div>
 
-    <!-- 4 detailed comparison cards -->
+    <!-- 4 DETAILED COMPARE CARDS -->
     <div class="compare-cards">
 
       <!-- CARD 1: Cash Burn -->
       <div class="cmp-card">
         <div class="cmp-header">
-          <h3>① 燒錢速度比較</h3>
-          <span class="cmp-tag tag-risk">🔴 晶心科高風險</span>
+          <h3>① 燒錢速度三方比較</h3>
+          <span class="cmp-tag tag-risk">🔴 晶心科壓力最大</span>
         </div>
-        <div class="cmp-insight">現金流量是判斷公司能否自給自足的核心指標——正數代表賺錢，負數代表持續消耗資本</div>
+        <div class="cmp-insight">營業/自由現金流除以同期營收，消除規模差異後比較各家真實的「造血能力」</div>
         <div class="cmp-body">
           <div class="legend-row">
-            <span><span class="legend-dot" style="background:#4fc3f7;"></span>晶心科（TWD，左軸 %）</span>
-            <span><span class="legend-dot" style="background:#ff9800;"></span>ARM（USD，左軸 %）</span>
+            <span><span class="legend-dot" style="background:#4fc3f7;"></span>晶心科 OCF%</span>
+            <span><span class="legend-dot" style="background:#ff9800;"></span>ARM OCF%</span>
+            <span><span class="legend-dot" style="background:#69f0ae;"></span>SiFive OCF%（估）</span>
           </div>
-          <canvas id="armCashChart" height="220"></canvas>
-          <div class="arm-note">* Y 軸為現金流量佔同期營收之比例（%），消除規模差異。晶心科 FY2025 全年 OCF 估算（含 CB 發行前後）。</div>
+          <canvas id="cashCompare3" height="230"></canvas>
+          <div class="arm-note">* 以各期OCF除以當期營收（%）標準化比較。SiFive 為私有公司，數據為公開披露及業界估算值。晶心科 FY2025 全年OCF 已包含 CB 融資 NT$15億前後的現金流動。</div>
           <table style="margin-top:14px; font-size:12px;">
-            <thead><tr>
-              <th>指標</th><th>晶心科（Q1'26）</th><th>ARM（FY2026）</th><th>差距</th>
-            </tr></thead>
+            <thead><tr><th>指標</th><th style="color:#4fc3f7;">晶心科</th><th style="color:#ff9800;">ARM</th><th style="color:#69f0ae;">SiFive</th></tr></thead>
             <tbody>
-              <tr><td>每季營業現金流</td><td class="highlight-red">-NT$61M（-18.7%）</td><td class="highlight-green">+$258M↑ (+21%)</td><td class="highlight-red">差距 40 ppt</td></tr>
-              <tr><td>每季自由現金流</td><td class="highlight-red">-NT$373M（-114%）</td><td class="highlight-green">+$220M (+18%)</td><td class="highlight-red">差距 132 ppt</td></tr>
-              <tr><td>現金跑道</td><td class="highlight-red">~4 季</td><td class="highlight-green">無限（正FCF）</td><td>—</td></tr>
-              <tr><td>消耗趨勢</td><td class="highlight-red">↑ 加速消耗</td><td class="highlight-green">↑ 改善中</td><td>—</td></tr>
+              <tr><td>最新季 OCF/Rev</td><td class="highlight-red">-18.7%（Q1'26）↑惡化</td><td class="highlight-green">+21%（FY26）↑改善</td><td class="highlight-yellow">~-70%（2025e）↑改善</td></tr>
+              <tr><td>最新季 FCF/Rev</td><td class="highlight-red">-114%（Q1'26）</td><td class="highlight-green">+18%（FY26）</td><td class="highlight-yellow">~-85%（2025e）</td></tr>
+              <tr><td>現金跑道</td><td class="highlight-red">~4季（增資中）</td><td class="highlight-green">無限（正FCF）</td><td class="highlight-green">~4-5年（$400M後）</td></tr>
+              <tr><td>最近融資事件</td><td class="highlight-yellow">CB $15億（2025.9）+ 現金增資（2026.5）</td><td>—（自給自足）</td><td class="highlight-green">$400M Series G（2026.4）</td></tr>
             </tbody>
           </table>
         </div>
-        <div class="cmp-verdict">⚡ <strong>結論：</strong>晶心科每季自由現金流為 -NT$373M（-114% of rev），比 ARM 快燒 132 個百分點，需注意。ARM 每季生成正自由現金流，財務健康度遠優於晶心科。</div>
+        <div class="cmp-verdict">⚡ <strong>結論：</strong>現金壓力晶心科最大（燒最快+跑道最短）。SiFive 雖也在燒錢但剛完成 $400M 融資，短期無慮。ARM 財務最健康。晶心科現金增資完成後可延長跑道，但 2028 CB 還款仍是中期最大挑戰。</div>
       </div>
 
-      <!-- CARD 2: Intangible Assets -->
+      <!-- CARD 2: Revenue Mix -->
       <div class="cmp-card">
         <div class="cmp-header">
-          <h3>② 無形資產比較</h3>
-          <span class="cmp-tag tag-warn">🟡 性質不同</span>
+          <h3>② Royalty vs License 三方比較</h3>
+          <span class="cmp-tag tag-warn">🟡 ARM 最成熟</span>
         </div>
-        <div class="cmp-insight">無形資產代表公司核心競爭力的帳面表現——IP、商譽、客戶關係等，比例高代表知識資本密集</div>
+        <div class="cmp-insight">Royalty（量產後按件收取）是 IP 授權最理想的被動收入，佔比越高代表客戶生態越成熟、越穩定</div>
         <div class="cmp-body">
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
-            <div>
-              <div style="text-align:center; font-size:12px; color:#4fc3f7; margin-bottom:6px;">晶心科 資產結構（2026.03）</div>
-              <canvas id="andesAssetsChart" height="180"></canvas>
-            </div>
-            <div>
-              <div style="text-align:center; font-size:12px; color:#ff9800; margin-bottom:6px;">ARM 資產結構（FY2025）</div>
-              <canvas id="armAssetsChart" height="180"></canvas>
-            </div>
-          </div>
-          <table style="font-size:12px;">
-            <thead><tr>
-              <th>項目</th><th>晶心科</th><th>ARM</th>
-            </tr></thead>
+          <canvas id="revenueType3" height="230"></canvas>
+          <table style="margin-top:14px; font-size:12px;">
+            <thead><tr><th>收入類型</th><th style="color:#4fc3f7;">晶心科 FY25/Q1'26</th><th style="color:#ff9800;">ARM FY25/FY26</th><th style="color:#69f0ae;">SiFive 2025e</th></tr></thead>
             <tbody>
-              <tr><td>無形資產主要項目</td><td>自研 RISC-V IP（發展中）</td><td>商譽 + 收購技術 IP</td></tr>
-              <tr><td>無形資產 / 總資產</td><td class="highlight-yellow">44.1%</td><td>~35%</td></tr>
-              <tr><td>年度攤銷金額</td><td>NT$520M/年（FY25，入R&D）</td><td>~$400M/年（入COGS）</td></tr>
-              <tr><td>無形資產趨勢</td><td class="highlight-red">↑ 快速增加（+37% FY25）</td><td class="trend-flat">→ 相對穩定</td></tr>
-              <tr><td>對獲利影響</td><td class="highlight-red">攤銷壓縮R&D費率</td><td>攤銷壓縮毛利率</td></tr>
+              <tr><td>授權費 License</td><td>65% → 55% <span class="trend-down">↓</span></td><td>46% → 47% <span class="trend-flat">→</span></td><td class="highlight-yellow">60% → 55%（估）</td></tr>
+              <tr><td>權利金 Royalty</td><td>19% → 25% <span class="trend-up">↑</span></td><td class="highlight-green">54% → 53% <span class="trend-flat">→</span></td><td class="highlight-red">10% → 12%（估）</td></tr>
+              <tr><td>維護/服務</td><td>16% → 20% <span class="trend-up">↑</span></td><td>—</td><td class="highlight-yellow">30%（含客製化服務）</td></tr>
+              <tr><td>Royalty YoY成長</td><td>+9.3%（FY25）</td><td class="highlight-green">+20%（FY26）</td><td>~+30%（估）</td></tr>
             </tbody>
           </table>
+          <div class="arm-note">* SiFive 私有公司，收入結構為官方商業模式揭露及業界估算：License 60% / 客製化設計服務 30% / Royalty 10%。ARM FY 為 4 月至 3 月。</div>
         </div>
-        <div class="cmp-verdict">⚡ <strong>結論：</strong>晶心科無形資產佔比（44%）略高於ARM（~35%），且持續快速增加，代表仍在大力建構自身 IP 生態系。ARM 無形資產源自收購，較為穩定。兩者相近但本質不同。</div>
+        <div class="cmp-verdict">⚡ <strong>結論：</strong>成熟度排序 ARM（53% royalty）&gt;&gt; 晶心科（19→25%）&gt; SiFive（~10%）。晶心科 royalty 每季持續提升是正向訊號；SiFive 因大量客製服務收入（30%），純 IP Royalty 佔比反而最低，但客製服務利潤率高於 license 費。</div>
       </div>
 
-      <!-- CARD 3: OpEx vs Revenue -->
+      <!-- CARD 3: R&D Intensity -->
       <div class="cmp-card">
         <div class="cmp-header">
-          <h3>③ 營業費用率趨勢比較</h3>
-          <span class="cmp-tag tag-risk">🔴 晶心科費率失控</span>
+          <h3>③ 研發費用強度三方比較</h3>
+          <span class="cmp-tag tag-risk">🔴 三家均高投入</span>
         </div>
-        <div class="cmp-insight">費用率趨勢揭示公司是否在走向獲利——費率持續下降才是健康的規模化路徑</div>
+        <div class="cmp-insight">R&D / 營收比越高，代表正投入越多建構未來 IP 護城河——短期燒錢但長期可能帶來高品質 Royalty 收入</div>
         <div class="cmp-body">
           <div class="legend-row">
-            <span><span class="legend-dot" style="background:#4fc3f7;"></span>晶心科 R&D%</span>
-            <span><span class="legend-dot" style="background:#1565c0;"></span>晶心科 G&A+Sales%</span>
-            <span><span class="legend-dot" style="background:#ff9800;"></span>ARM GAAP R&D%</span>
-            <span><span class="legend-dot" style="background:#e65100;"></span>ARM Non-GAAP R&D%</span>
+            <span><span class="legend-dot" style="background:#4fc3f7;"></span>晶心科 R&D/Rev</span>
+            <span><span class="legend-dot" style="background:#ff9800;"></span>ARM GAAP R&D/Rev</span>
+            <span><span class="legend-dot" style="background:#e65100;"></span>ARM Non-GAAP R&D/Rev</span>
+            <span><span class="legend-dot" style="background:#69f0ae;"></span>SiFive OpEx/Rev（估）</span>
           </div>
-          <canvas id="armExpenseChart" height="220"></canvas>
+          <canvas id="expense3" height="230"></canvas>
           <table style="margin-top:14px; font-size:12px;">
-            <thead><tr><th>費用項目</th><th>晶心科 Q1'26</th><th>ARM FY2026</th></tr></thead>
+            <thead><tr><th>研發效率指標</th><th style="color:#4fc3f7;">晶心科</th><th style="color:#ff9800;">ARM</th><th style="color:#69f0ae;">SiFive</th></tr></thead>
             <tbody>
-              <tr><td>研發費用 / 營收</td><td class="highlight-red">116.5% ↑↑</td><td class="highlight-yellow">57.0% GAAP ↑</td></tr>
-              <tr><td>研發（Non-GAAP / 去SBC）</td><td>~76%（估計）</td><td class="highlight-green">~36% ↑</td></tr>
-              <tr><td>G&A / 營收</td><td>~36%</td><td>~10%</td></tr>
-              <tr><td>銷售費用 / 營收</td><td>~9%</td><td>~10%</td></tr>
-              <tr><td>總營業費用率</td><td class="highlight-red">~162%</td><td class="highlight-yellow">~77% GAAP</td></tr>
+              <tr><td>GAAP R&D/Revenue（最新）</td><td class="highlight-red">116.5%（Q1'26）</td><td class="highlight-yellow">57%（FY26）</td><td class="highlight-red">~130%（2025e）</td></tr>
+              <tr><td>Non-GAAP / 現金R&D/Rev</td><td>~76%（估）</td><td class="highlight-green">~36%（FY26）</td><td>~130%（主要現金燒）</td></tr>
+              <tr><td>每員工研發支出/年</td><td>~NT$2,568K（$80K）</td><td class="highlight-green">~$399K（GAAP）</td><td>~$260K（估）</td></tr>
+              <tr><td>每員工創收/年</td><td>~NT$2,956K（$92K）</td><td class="highlight-green">~$703K</td><td>~$240K</td></tr>
+              <tr><td>R&D 轉化效率</td><td class="highlight-yellow">↑ 收入 20.3% YoY</td><td class="highlight-green">↑ 收入 23% YoY</td><td class="highlight-yellow">↑ 收入 50%+ YoY</td></tr>
             </tbody>
           </table>
-          <div class="arm-note">* ARM GAAP R&D 含大額股份酬勞（SBC ~$700M/年）。Non-GAAP 更能反映現金研發投入。晶心科含 R&D 攤銷 NT$520M/年。</div>
+          <div class="arm-note">* 員工數：ARM ~7,000；晶心科 ~500（估）；SiFive ~500。ARM GAAP R&D 含大量 SBC（~$700M），non-GAAP 更反映現金研發。晶心科 R&D 含 NT$520M/年攤銷。</div>
         </div>
-        <div class="cmp-verdict">⚡ <strong>結論：</strong>晶心科 GAAP 研發費率（116.5%）比 ARM（57%）高出近一倍，且趨勢持續惡化。ARM 費率雖也上升但在可控範圍；晶心科若收入增速無法趕上費用，財務壓力將持續加大。</div>
+        <div class="cmp-verdict">⚡ <strong>結論：</strong>ARM 研發效率最佳（每員工創收 $703K，R&D 費率 57%）；晶心科與 SiFive 研發費率都超過 100%，均在建構護城河期。但 SiFive 收入成長 50%+ 轉化率較晶心科的 20.3% 更強，短期規模化速度更快。</div>
       </div>
 
-      <!-- CARD 4: Revenue Type Mix -->
+      <!-- CARD 4: Intangible Assets -->
       <div class="cmp-card">
         <div class="cmp-header">
-          <h3>④ Royalty vs License 收入結構</h3>
-          <span class="cmp-tag tag-warn">🟡 晶心科仍依賴授權費</span>
+          <h3>④ 無形資產 IP 護城河比較</h3>
+          <span class="cmp-tag tag-warn">🟡 ARM 最深 晶心科追趕</span>
         </div>
-        <div class="cmp-insight">Royalty（量產後持續收取）比 License（一次性簽約）更穩定，代表客戶進入量產階段的成熟度</div>
+        <div class="cmp-insight">無形資產代表已沉澱的 IP 價值——自建 IP 不斷增加意味著護城河正在加深，是長期競爭力指標</div>
         <div class="cmp-body">
-          <canvas id="armRevenueTypeChart" height="240"></canvas>
-          <div style="margin-top:12px;">
-          <table style="font-size:12px;">
-            <thead><tr><th>收入類型</th><th>晶心科 FY25</th><th>晶心科 Q1'26</th><th>ARM FY25</th><th>ARM FY26</th></tr></thead>
+          <div class="three-donuts">
+            <div>
+              <div style="text-align:center;font-size:11px;color:#4fc3f7;margin-bottom:5px;">晶心科 資產結構（2026.03）</div>
+              <canvas id="assetsAndes3" height="160"></canvas>
+            </div>
+            <div>
+              <div style="text-align:center;font-size:11px;color:#ff9800;margin-bottom:5px;">ARM 資產結構（FY2025）</div>
+              <canvas id="assetsArm3" height="160"></canvas>
+            </div>
+            <div>
+              <div style="text-align:center;font-size:11px;color:#69f0ae;margin-bottom:5px;">SiFive 資產結構（2026，估）</div>
+              <canvas id="assetsSiFive3" height="160"></canvas>
+            </div>
+          </div>
+          <table style="margin-top:12px; font-size:12px;">
+            <thead><tr><th>無形資產指標</th><th style="color:#4fc3f7;">晶心科</th><th style="color:#ff9800;">ARM</th><th style="color:#69f0ae;">SiFive</th></tr></thead>
             <tbody>
-              <tr><td>授權費（License）</td><td>65% <span class="trend-down">↓</span></td><td>55%</td><td>46%</td><td>47%</td></tr>
-              <tr><td>權利金（Royalty）</td><td>19% <span class="trend-up">↑</span></td><td class="highlight-yellow">25%</td><td class="highlight-green">54%</td><td class="highlight-green">53%</td></tr>
-              <tr><td>維護服務（Support）</td><td>16%</td><td>20%</td><td>—</td><td>—</td></tr>
-              <tr><td>Royalty YoY 成長</td><td colspan="2" style="text-align:center;">+9.3%（FY25）</td><td colspan="2" style="text-align:center;">+20%（FY25→FY26）</td></tr>
+              <tr><td>無形資產 / 總資產</td><td class="highlight-yellow">44.1%（自研）↑</td><td>~35%（收購）→</td><td class="highlight-red">~5%（費用化）</td></tr>
+              <tr><td>主要項目</td><td>發展中RISC-V IP + 專門技術</td><td>商譽$1.6B + 技術IP</td><td>商譽（收購小公司）</td></tr>
+              <tr><td>年度攤銷影響</td><td>NT$520M/年（入R&D）</td><td>~$400M/年（入COGS）</td><td>小（多費用化）</td></tr>
+              <tr><td>IP 護城河深度</td><td class="highlight-yellow">🟡 快速建構中</td><td class="highlight-green">🟢 最深（30年積累）</td><td class="highlight-red">🔴 較淺（US GAAP費用化）</td></tr>
+              <tr><td>無形資產趨勢</td><td class="highlight-red">↑↑ +37%/年（FY25）</td><td class="trend-flat">→ 穩定</td><td class="trend-up">↑ 收購帶動</td></tr>
             </tbody>
           </table>
-          </div>
-          <div class="arm-note">* ARM FY 為 4 月至 3 月；晶心科 FY 為 1 月至 12 月。ARM 無單獨揭露維護服務，License 含支援服務。</div>
         </div>
-        <div class="cmp-verdict">⚡ <strong>結論：</strong>ARM 已進入量產收成期，權利金佔 53% 且持續增長（+20% YoY）；晶心科仍以一次性授權為主（65%），但 Q1'26 權利金佔比已升至 25%，顯示客戶逐步量產，方向正確但進度落後 ARM 數年。</div>
+        <div class="cmp-verdict">⚡ <strong>結論：</strong>ARM 護城河最深（30 年技術積累 + 生態壟斷）；晶心科在快速建構自研 IP（+37%/年），IFRS 資本化政策使 IP 帳面可見；SiFive 在美國 GAAP 下多數 R&D 費用化，無形資產帳面佔比低但實際 IP 正在快速積累，帳面不代表護城河淺。</div>
       </div>
 
     </div><!-- /compare-cards -->
@@ -1761,189 +1788,196 @@ new Chart(document.getElementById('cashBurnChart'), {
 });
 
 // ============================================================
-// ARM COMPARISON CHARTS
+// THREE-WAY COMPARISON CHARTS: 晶心科 vs ARM vs SiFive
 // ============================================================
 
-// CHART A1: Cash Flow % of Revenue — Bar comparison
-new Chart(document.getElementById('armCashChart'), {
+// CHART C1: Cash Burn — OCF% of Revenue (grouped bar)
+new Chart(document.getElementById('cashCompare3'), {
   type: 'bar',
   data: {
-    labels: ['FY23', 'FY24', 'FY25', 'Q1\'26\n(最新)'],
+    labels: ['晶心科\nFY24', '晶心科\nFY25', '晶心科\nQ1\'26', 'ARM\nFY25', 'ARM\nFY26', 'SiFive\n2023e', 'SiFive\n2024e', 'SiFive\n2025e'],
     datasets: [
       {
         label: '晶心科 OCF/Rev%',
-        data: [-42, -35, -25, -18.7],
-        backgroundColor: 'rgba(79,195,247,0.65)',
-        borderColor: '#4fc3f7', borderWidth: 1, borderRadius: 4,
-        stack: 'andes'
-      },
-      {
-        label: '晶心科 FCF/Rev%（含R&D資本化）',
-        data: [-95, -88, -105, -114.4],
-        backgroundColor: 'rgba(79,195,247,0.25)',
-        borderColor: '#4fc3f7', borderDash: [4,2], borderWidth: 1, borderRadius: 4,
-        type: 'line', pointRadius: 4, stack: undefined, fill: false,
-        yAxisID: 'y'
+        data: [-35, -25, -18.7, null, null, null, null, null],
+        backgroundColor: 'rgba(79,195,247,0.70)',
+        borderColor: '#4fc3f7', borderWidth: 1, borderRadius: 4
       },
       {
         label: 'ARM OCF/Rev%',
-        data: [null, null, 9.9, 21.0],
-        backgroundColor: 'rgba(255,152,0,0.65)',
-        borderColor: '#ff9800', borderWidth: 1, borderRadius: 4,
-        stack: 'arm'
+        data: [null, null, null, 9.9, 21.0, null, null, null],
+        backgroundColor: 'rgba(255,152,0,0.70)',
+        borderColor: '#ff9800', borderWidth: 1, borderRadius: 4
       },
       {
-        label: 'ARM FCF/Rev%',
-        data: [null, null, 8.5, 17.9],
-        backgroundColor: 'rgba(255,152,0,0.25)',
-        borderColor: '#ff9800', borderDash: [4,2], borderWidth: 1, borderRadius: 4,
-        type: 'line', pointRadius: 4, stack: undefined, fill: false,
-        yAxisID: 'y'
+        label: 'SiFive OCF/Rev%（估）',
+        data: [null, null, null, null, null, -290, -130, -70],
+        backgroundColor: 'rgba(105,240,174,0.70)',
+        borderColor: '#69f0ae', borderWidth: 1, borderRadius: 4
       }
     ]
   },
   options: {
     responsive: true,
     plugins: {
-      legend: { display: true, labels: { font: { size: 11 } } },
+      legend: { display: true, labels: { color: '#b0bec5', font: { size: 11 } } },
       tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y + '%' } }
     },
     scales: {
       y: {
         ticks: { color: '#90caf9', callback: v => v + '%' },
         grid: { color: '#1e3a5f' },
-        title: { display: true, text: '現金流量 / 營收 (%)', color: '#78909c' }
+        title: { display: true, text: 'OCF / 營收 (%)', color: '#78909c' }
+      },
+      x: { ticks: { color: '#90caf9', font: { size: 10 } }, grid: { color: '#1e3a5f' } }
+    }
+  }
+});
+
+// CHART C2: Revenue Structure — Stacked Bar (License / Royalty / Services)
+new Chart(document.getElementById('revenueType3'), {
+  type: 'bar',
+  data: {
+    labels: ['晶心科\nFY24', '晶心科\nFY25', '晶心科\nQ1\'26', 'ARM\nFY25', 'ARM\nFY26', 'SiFive\n2025e'],
+    datasets: [
+      {
+        label: '授權費 License',
+        data: [67, 65, 55, 46, 47, 60],
+        backgroundColor: ['#1976d2','#1976d2','#1976d2','#bf360c','#bf360c','#1b5e20'],
+        borderRadius: 2, borderSkipped: false
+      },
+      {
+        label: '權利金 Royalty',
+        data: [21, 19, 25, 54, 53, 10],
+        backgroundColor: ['#00838f','#00838f','#00838f','#ff9800','#ff9800','#69f0ae'],
+        borderRadius: 2, borderSkipped: false
+      },
+      {
+        label: '服務/維護 Services',
+        data: [12, 16, 20, 0, 0, 30],
+        backgroundColor: ['#546e7a','#546e7a','#546e7a','rgba(0,0,0,0)','rgba(0,0,0,0)','#33691e'],
+        borderRadius: 2, borderSkipped: false
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: true, labels: { color: '#b0bec5', font: { size: 11 } } },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y + '%' } }
+    },
+    scales: {
+      x: { stacked: true, ticks: { color: '#90caf9', font: { size: 10 } }, grid: { display: false } },
+      y: {
+        stacked: true, min: 0, max: 100,
+        ticks: { color: '#90caf9', callback: v => v + '%' },
+        grid: { color: '#1e3a5f' },
+        title: { display: true, text: '佔總營收 (%)', color: '#78909c' }
+      }
+    }
+  }
+});
+
+// CHART C3: R&D Expense Intensity — Multi-line trend
+new Chart(document.getElementById('expense3'), {
+  type: 'line',
+  data: {
+    labels: ['CY23 / FY24', 'CY24 / FY25', 'CY25 / FY26', 'Q1\'26'],
+    datasets: [
+      {
+        label: '晶心科 R&D/Rev%',
+        data: [72.4, 78.4, 86.9, 116.5],
+        borderColor: '#4fc3f7', backgroundColor: 'rgba(79,195,247,0.10)',
+        tension: 0.4, fill: true, pointRadius: 5, borderWidth: 2.5
+      },
+      {
+        label: 'ARM GAAP R&D/Rev%',
+        data: [52.5, 52.5, 57, null],
+        borderColor: '#ff9800', backgroundColor: 'rgba(255,152,0,0.05)',
+        tension: 0.4, fill: false, pointRadius: 5, borderWidth: 2.5
+      },
+      {
+        label: 'ARM Non-GAAP R&D/Rev%',
+        data: [33, 36, 38, null],
+        borderColor: '#ffcc80', borderDash: [5, 3],
+        tension: 0.4, fill: false, pointRadius: 4, borderWidth: 1.5
+      },
+      {
+        label: 'SiFive R&D/Rev%（估）',
+        data: [290, 150, 130, null],
+        borderColor: '#69f0ae', backgroundColor: 'rgba(105,240,174,0.05)',
+        tension: 0.4, fill: false, pointRadius: 5, borderWidth: 2.5
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: true, labels: { color: '#b0bec5', font: { size: 11 } } } },
+    scales: {
+      y: {
+        min: 0, max: 320,
+        ticks: { color: '#90caf9', callback: v => v + '%' },
+        grid: { color: '#1e3a5f' },
+        title: { display: true, text: 'R&D費用 / 營收 (%)', color: '#78909c' }
       },
       x: { ticks: { color: '#90caf9' }, grid: { color: '#1e3a5f' } }
     }
   }
 });
 
-// CHART A2a: Andes Asset Structure donut
-new Chart(document.getElementById('andesAssetsChart'), {
+// CHART C4a: Andes Asset Structure donut
+new Chart(document.getElementById('assetsAndes3'), {
   type: 'doughnut',
   data: {
     labels: ['現金&定存 (21%)', '無形資產 (44%)', '不動產 (21%)', '應收&合約 (6%)', '其他 (8%)'],
     datasets: [{
       data: [21, 44, 21, 6, 8],
-      backgroundColor: ['#1565c0','#4fc3f7','#00838f','#1e88e5','#546e7a'],
+      backgroundColor: ['#01579b','#4fc3f7','#00838f','#1e88e5','#546e7a'],
       borderColor: '#16213e', borderWidth: 2, hoverOffset: 6
     }]
   },
   options: {
     cutout: '55%',
     plugins: {
-      legend: { position: 'bottom', labels: { font: { size: 10 }, padding: 8 } }
+      legend: { position: 'bottom', labels: { color: '#b0bec5', font: { size: 10 }, padding: 8 } }
     }
   }
 });
 
-// CHART A2b: ARM Asset Structure donut
-new Chart(document.getElementById('armAssetsChart'), {
+// CHART C4b: ARM Asset Structure donut
+new Chart(document.getElementById('assetsArm3'), {
   type: 'doughnut',
   data: {
-    labels: ['現金&投資 (33%)', '商譽 (18%)', '其他無形 (17%)', '其他資產 (32%)'],
+    labels: ['現金&投資 (33%)', '商譽 (18%)', '其他無形資產 (17%)', '其他資產 (32%)'],
     datasets: [{
       data: [33, 18, 17, 32],
-      backgroundColor: ['#e65100','#ff9800','#ffb74d','#546e7a'],
+      backgroundColor: ['#bf360c','#ff9800','#ffcc80','#546e7a'],
       borderColor: '#16213e', borderWidth: 2, hoverOffset: 6
     }]
   },
   options: {
     cutout: '55%',
     plugins: {
-      legend: { position: 'bottom', labels: { font: { size: 10 }, padding: 8 } }
+      legend: { position: 'bottom', labels: { color: '#b0bec5', font: { size: 10 }, padding: 8 } }
     }
   }
 });
 
-// CHART A3: OpEx% Trend Line chart
-new Chart(document.getElementById('armExpenseChart'), {
-  type: 'line',
+// CHART C4c: SiFive Asset Structure donut (post $400M Series G)
+new Chart(document.getElementById('assetsSiFive3'), {
+  type: 'doughnut',
   data: {
-    labels: ['FY23/CY23', 'FY24/CY24', 'FY25/CY25', 'Q1\'26 / FY26'],
-    datasets: [
-      {
-        label: '晶心科 R&D/Rev%',
-        data: [72.4, 78.4, 86.9, 116.5],
-        borderColor: '#4fc3f7', backgroundColor: 'rgba(79,195,247,0.1)',
-        tension: 0.4, fill: true, pointRadius: 5, borderWidth: 2
-      },
-      {
-        label: '晶心科 G&A+Sales/Rev%',
-        data: [20, 22, 25, 45],
-        borderColor: '#1565c0', backgroundColor: 'rgba(21,101,192,0.05)',
-        tension: 0.4, fill: true, pointRadius: 4, borderWidth: 2
-      },
-      {
-        label: 'ARM GAAP R&D/Rev%',
-        data: [64, 52.5, 52.5, 57],
-        borderColor: '#ff9800', backgroundColor: 'rgba(255,152,0,0.05)',
-        tension: 0.4, fill: false, pointRadius: 5, borderWidth: 2
-      },
-      {
-        label: 'ARM Non-GAAP R&D/Rev%',
-        data: [null, 33, 36, 38],
-        borderColor: '#e65100', borderDash: [5,3],
-        tension: 0.4, fill: false, pointRadius: 4, borderWidth: 1.5
-      }
-    ]
+    labels: ['現金（募資後）(60%)', '無形資產/商譽 (15%)', '設備/其他 (10%)', '其他資產 (15%)'],
+    datasets: [{
+      data: [60, 15, 10, 15],
+      backgroundColor: ['#1b5e20','#69f0ae','#00bfa5','#546e7a'],
+      borderColor: '#16213e', borderWidth: 2, hoverOffset: 6
+    }]
   },
   options: {
-    responsive: true,
-    plugins: { legend: { display: true, labels: { font: { size: 11 } } } },
-    scales: {
-      y: {
-        min: 0, max: 130,
-        ticks: { color: '#90caf9', callback: v => v + '%' },
-        grid: { color: '#1e3a5f' },
-        title: { display: true, text: '費用佔營收 (%)', color: '#78909c' }
-      },
-      x: { ticks: { color: '#90caf9' }, grid: { color: '#1e3a5f' } }
-    }
-  }
-});
-
-// CHART A4: Revenue Type Stacked Bar
-new Chart(document.getElementById('armRevenueTypeChart'), {
-  type: 'bar',
-  data: {
-    labels: ['晶心科\nFY2024', '晶心科\nFY2025', '晶心科\nQ1\'26', 'ARM\nFY2025', 'ARM\nFY2026'],
-    datasets: [
-      {
-        label: '授權費 License',
-        data: [67, 65, 55, 46, 47],
-        backgroundColor: ['#1976d2','#1976d2','#1976d2','#e65100','#e65100'],
-        borderRadius: 4, borderSkipped: false
-      },
-      {
-        label: '權利金 Royalty',
-        data: [21, 19, 25, 54, 53],
-        backgroundColor: ['#00838f','#00838f','#00838f','#ff9800','#ff9800'],
-        borderRadius: 4, borderSkipped: false
-      },
-      {
-        label: '維護服務 Support（晶心科）',
-        data: [12, 16, 20, 0, 0],
-        backgroundColor: ['#546e7a','#546e7a','#546e7a','transparent','transparent'],
-        borderRadius: 4, borderSkipped: false
-      }
-    ]
-  },
-  options: {
-    responsive: true,
+    cutout: '55%',
     plugins: {
-      legend: { display: true, labels: { font: { size: 11 } } },
-      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y + '%' } }
-    },
-    scales: {
-      x: { stacked: true, ticks: { color: '#90caf9' }, grid: { display: false } },
-      y: {
-        stacked: true, min: 0, max: 100,
-        ticks: { color: '#90caf9', callback: v => v + '%' },
-        grid: { color: '#1e3a5f' },
-        title: { display: true, text: '佔總營收比例 (%)', color: '#78909c' }
-      }
+      legend: { position: 'bottom', labels: { color: '#b0bec5', font: { size: 10 }, padding: 8 } }
     }
   }
 });
